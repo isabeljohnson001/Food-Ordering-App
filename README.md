@@ -116,7 +116,7 @@ npm run serve
 ### Metabase
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/metabase.png)
 
-### RedisInsight
+### Redis
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/redis.png)
 
 ### RabbitMQ Management
