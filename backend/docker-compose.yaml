@@ -1,0 +1,172 @@
+services:
+  gateway_service:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: gateway_service
+    env_file:
+      - ./gateway/.env
+    environment:
+      - ENVIRONMENT=test
+      - DEBUG=true
+      - RABBITMQ_USER=rabbitmq_user
+      - RABBITMQ_PASS=rabbitmq_password
+      - RABBITMQ_VHOST=/
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - REDIS_HOST=gateway_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - REDIS_PASSWORD=gateway_password
+      - TOKEN_SECRET_KEY=fdshU32U89UH324SDFHJDASFdsf2394
+      - API_PREFIX=/api/v1
+      - SERVICE_HOST=0.0.0.0
+      - SERVICE_PORT=8000
+    ports:
+      - "8000:8000"
+    networks:
+      - backend-network
+      - frontend-network
+
+  user_service:
+    build:
+      context: ./microservices/user
+      dockerfile: Dockerfile
+    container_name: "user_service"
+    env_file:
+      - ./microservices/user/.env
+    environment:
+      - ENVIRONMENT=test
+      - DEBUG=true
+      - RABBITMQ_USER=rabbitmq_user
+      - RABBITMQ_PASS=rabbitmq_password
+      - RABBITMQ_VHOST=/
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - REDIS_HOST=user_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - REDIS_PASSWORD=user_password
+      - POSTGRES_HOST=user_postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=user_user
+      - POSTGRES_PASSWORD=user_password
+      - POSTGRES_DB=user_database
+    networks:
+      - backend-network
+
+  restaurant_service:
+    build:
+      context: ./microservices/restaurant
+      dockerfile: Dockerfile
+    container_name: "restaurant_service"
+    env_file:
+      - ./microservices/restaurant/.env
+    environment:
+      - ENVIRONMENT=test
+      - DEBUG=true
+      - RABBITMQ_USER=rabbitmq_user
+      - RABBITMQ_PASS=rabbitmq_password
+      - RABBITMQ_VHOST=/
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - REDIS_HOST=restaurant_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - REDIS_PASSWORD=restaurant_password
+      - POSTGRES_HOST=restaurant_postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=restaurant_user
+      - POSTGRES_PASSWORD=restaurant_password
+      - POSTGRES_DB=restaurant_database
+    networks:
+      - backend-network
+
+
+  location_service:
+    build:
+      context: ./microservices/location
+      dockerfile: Dockerfile
+    container_name: "location_service"
+    env_file:
+      - ./microservices/location/.env
+    environment:
+      - ENVIRONMENT=test
+      - DEBUG=true
+      - RABBITMQ_USER=rabbitmq_user
+      - RABBITMQ_PASS=rabbitmq_password
+      - RABBITMQ_VHOST=/
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - REDIS_HOST=location_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - REDIS_PASSWORD=location_password
+      - POSTGRES_HOST=location_postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=location_user
+      - POSTGRES_PASSWORD=location_password
+      - POSTGRES_DB=location_database
+    networks:
+      - backend-network
+
+  order_service:
+    build:
+      context: ./microservices/order
+      dockerfile: Dockerfile
+    container_name: "order_service"
+    env_file:
+      - ./microservices/order/.env
+    environment:
+      - ENVIRONMENT=dev
+      - DEBUG=true
+      - REDIS_HOST=order_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - REDIS_PASSWORD=order_password
+      - RABBITMQ_USER=rabbitmq_user
+      - RABBITMQ_PASS=rabbitmq_password
+      - RABBITMQ_VHOST=/
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - MONGO_HOST=order_mongo
+      - MONGO_PORT=27017
+      - MONGO_USERNAME=order_user
+      - MONGO_PASSWORD=order_password
+      - MONGO_DATABASE=order_database
+    networks:
+      - backend-network
+
+  feedback_service:
+    build:
+      context: ./microservices/feedback
+      dockerfile: Dockerfile
+    container_name: "feedback_service"
+    env_file:
+      - ./microservices/feedback/.env
+    environment:
+      - ENVIRONMENT=dev
+      - DEBUG=true
+      - REDIS_HOST=feedback_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - REDIS_PASSWORD=feedback_password
+      - RABBITMQ_USER=rabbitmq_user
+      - RABBITMQ_PASS=rabbitmq_password
+      - RABBITMQ_VHOST=/
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - MONGO_HOST=feedback_mongo
+      - MONGO_PORT=27017
+      - MONGO_USERNAME=feedback_user
+      - MONGO_PASSWORD=feedback_password
+      - MONGO_DATABASE=feedback_database
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    external: true
+
+  frontend-network:
+    external: true
