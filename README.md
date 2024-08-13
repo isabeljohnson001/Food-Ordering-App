@@ -5,7 +5,7 @@
 
 Technology Stack and Features
 
--[**FastAPI**](https://fastapi.tiangolo.com):
+- [**FastAPI**](https://fastapi.tiangolo.com):
     - [pydantic](https://docs.pydantic.dev) for settings and request/response validation.
     - JWT middleware for secure authentication.
     - Permission manager for role-based access control on routes.
@@ -14,33 +14,33 @@ Technology Stack and Features
     - Secure password hashing by default.
     - Customizable profilers with [Prometheus](https://prometheus.io/).
 
--[**MongoDB**](https://www.mongodb.com/): 
+- [**MongoDB**](https://www.mongodb.com/): 
   - Async client with [motor](https://github.com/mongodb/motor) and Object Document Mapping (ODM) 
 
--[**Redis**](https://redis.io/):
+- [**Redis**](https://redis.io/):
   - Async operations for caching and session management.
   - [redis-py](https://github.com/redis/redis-py).
 
--**PostgreSQL**:
+- **PostgreSQL**:
   - Async client with [aqlachemy](https://github.com/sqlalchemy/sqlalchemy) ORM & automatic migrations with [alembic](https://github.com/sqlalchemy/alembic)..
   - [asyncpg-client](https://github.com/deepmancer/asyncpg-client) as the session manager.
 
--[**RabbitMQ**](https://www.rabbitmq.com/):
+- [**RabbitMQ**](https://www.rabbitmq.com/):
   - Utilizing [rabbitmq-rpc](https://github.com/deepmancer/rabbitmq-rpc) and [aio-pika](https://github.com/mosquito/aio-pika).
   - No server-side implementation.
 
--[**Docker Compose**](https://www.docker.com):
+- [**Docker Compose**](https://www.docker.com):
   - Containers for simplified deployment and scaling.
 
--[**Pytest**](https://github.com/pytest-dev/pytest):
+- [**Pytest**](https://github.com/pytest-dev/pytest):
   - Async tests with pytest and pytest-async.
 
-## ** GUI Management Tools**
--[**Grafana**](https://grafana.com/): Automatic metric dashboards on endpoints using [Prometheus](https://prometheus.io/).
--[**Metabase**](https://www.metabase.com/): PostgreSQL/MongoDB analytics and reporting.
--[**RedisInsight**](https://redis.io/insight/): Redis data visualization and management.
--[**Mongo-Express**](https://github.com/mongo-express/mongo-express): MongoDB admin interface.
--[**RabbitMQ Management**](https://www.rabbitmq.com/docs/management): Visualizing and monitoring events.
+## **GUI Management Tools**
+- [**Grafana**](https://grafana.com/): Automatic metric dashboards on endpoints using [Prometheus](https://prometheus.io/).
+- [**Metabase**](https://www.metabase.com/): PostgreSQL/MongoDB analytics and reporting.
+- [**RedisInsight**](https://redis.io/insight/): Redis data visualization and management.
+- [**Mongo-Express**](https://github.com/mongo-express/mongo-express): MongoDB admin interface.
+- [**RabbitMQ Management**](https://www.rabbitmq.com/docs/management): Visualizing and monitoring events.
  
 These tools are configured and run via Docker in the `infra/admin/docker-compose.yaml`.
 
@@ -105,3 +105,22 @@ Run the development server with hot-reloading enabled.
 ```bash
 npm run serve
 ```
+
+## Interactive API Documentation
+![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/api_documentation.png)
+
+## Admin Dashboards
+### Grafana ([localhost:3000](http://localhost:3000))
+![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/grafana.png)
+
+### Metabase ([localhost:3030](http://localhost:3030))
+![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/metabase.png)
+
+### RedisInsight ([localhost:5540](http://localhost:5540))
+![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/redis.png)
+
+### RabbitMQ Management ([localhost:15673](http://localhost:15673))
+![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/rabbitmq.png)
+
+### MongoDB Compass
+![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/mongodb.png)
