@@ -1,7 +1,5 @@
 # Food-Ordering-App
-
-
-> EatMe is a full-stack, microservice-based food ordering application designed for scalability and efficiency. Built with modern technologies like Python's FastAPI and Javascript. This application follows best practices in object-oriented design and microservices architecture. It serves as a robust template to create advanced backend microservice projects.
+EatMe is a full-stack, microservice-based food ordering application designed for scalability and efficiency. Built with modern technologies like Python's FastAPI and Javascript. This application follows best practices in object-oriented design and microservices architecture. It serves as a robust template to create advanced backend microservice projects.
 
 Technology Stack and Features
 
