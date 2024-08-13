@@ -110,16 +110,16 @@ npm run serve
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/api_documentation.png)
 
 ## Admin Dashboards
-### Grafana ([localhost:3000](http://localhost:3000))
+### Grafana
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/grafana.png)
 
-### Metabase ([localhost:3030](http://localhost:3030))
+### Metabase
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/metabase.png)
 
-### RedisInsight ([localhost:5540](http://localhost:5540))
+### RedisInsight
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/redis.png)
 
-### RabbitMQ Management ([localhost:15673](http://localhost:15673))
+### RabbitMQ Management
 ![image](https://github.com/isabeljohnson001/Food-Ordering-App/blob/5c751cbaa7477a719dfb2c0b00f2c7f7ebdf434f/images/rabbitmq.png)
 
 ### MongoDB Compass
